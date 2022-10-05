@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+h1{
+    color: #fff;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+.content{
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(147, 9, 202);
+    border-radius: 10px;
+}
+.comp-content{
+    width: 100%;
+    position: absolute;
+    top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+.inputTarefa input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    padding: 0 12px;
+}
+button#btn-addItem{
+    width: 120px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+.lista{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+    overflow-x: auto;
+    margin: 5px;
+}
+.lista::-webkit-scrollbar{
+    width: 9px;
+}
+.lista::-webkit-scrollbar-track{
+    border-radius: 15px;
+}
+.lista::-webkit-scrollbar-thumb {
+    background-color: #000;   
+    border-radius: 20px;       
+    border: 2px solid rgb(147, 9, 202);
+  }
+li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.411);
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 1.3em;
+    color: #fff;
+}
+button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: rgb(147, 9, 202);
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 1000px;
+    cursor: pointer;
+    user-select: none;
+}
+.notificacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1em;
+    width: 350px;
+    height: 60px;
+    background-color: #ee2222;
+    color: rgb(255, 252, 55);
+    font-size: 1.2em;
+    border-radius: 5px;
+    animation: animacao 1.5s linear;
+}
+@keyframes animacao{
+    0%,30%,60%{
+        margin-top: 10px;
+    }
+    10%,40%,70%,80%{
+        margin-top: -7px;
+    }
+    20%,50%,90%,100%{
+        margin-top: 7px;
+    }
+    50%{
+        opacity: 100%;
+    }
+    80%{
+        opacity: 50%;
+    }
+    100%{
+        opacity: 0;
+    } 
+}
+
+@media(max-width: 850px){
+    .comp-content, .lista{
+        width: 95%;
+    }
+}
+@media(max-width: 720px){
+    .content{
+        height: 70vh;
+    }
+    .comp-content{
+        flex-direction: column;
+        z-index: 1;
+        border: 1px solid red;
+    }
+    .inputTarefa input{
+        font-size: 1em;
+    }
+    button#btn-addItem{
+        width: 100%;
+    }
+    .lista{
+        overflow: hidden;
+        border: 1px solid red;
+    }
+    li{
+        margin: 5px 0;
+    }
+}
